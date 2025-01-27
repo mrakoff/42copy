@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 02:49:54 by msalangi          #+#    #+#             */
-/*   Updated: 2025/01/22 03:00:45 by msalangi         ###   ########.fr       */
+/*   Created: 2025/01/25 21:58:02 by msalangi          #+#    #+#             */
+/*   Updated: 2025/01/27 16:58:14 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] < 'A') || (str[i] > 'z'))
+		if (((str[i] < 'A') && (str[i] > 'Z'))
+			|| ((str[i] < 'a') && (str[i] > 'z')))
 		{
 			return (0);
 		}
@@ -31,11 +32,11 @@ int	ft_str_is_alpha(char *str)
 		}
 		else
 		{
-			return (1);
+			return (0);
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 // int main(void)

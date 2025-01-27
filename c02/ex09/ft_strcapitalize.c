@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 17:55:10 by msalangi          #+#    #+#             */
-/*   Updated: 2025/01/25 00:30:56 by msalangi         ###   ########.fr       */
+/*   Created: 2025/01/25 22:03:35 by msalangi          #+#    #+#             */
+/*   Updated: 2025/01/27 19:16:43 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_alpha(char s);
-int		is_num(char n);
+int	is_alpha(char s);
+int	is_num(char n);
 
 char	*ft_strcapitalize(char *str)
 {
 	int		i;
 
 	i = 1;
-	if (str[i] >= 'a' && str[i] <= 'z')
+	if (str[0] >= 'a' && str[0] <= 'z')
 	{
 		str[0] = str[0] - 32;
 	}
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'A') && (str[i] <= 'Z'))
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
 			str[i] = str[i] + 32;
 		}
@@ -32,7 +32,7 @@ char	*ft_strcapitalize(char *str)
 		{
 			str[i] = str[i] - 32;
 		}
-		if (is_num(str[i - 1]) && (str[i] > 'A') && str[i] < 'Z')
+		if (is_num(str[i - 1]) && str[i] > 'A' && str[i] < 'Z')
 		{
 			str[i] = str[i] + 32;
 		}
@@ -43,7 +43,7 @@ char	*ft_strcapitalize(char *str)
 
 int	is_alpha(char s)
 {
-	if (((s >= 'A') && (s <= 'Z')) || ((s >= 'a') && (s <= 'z')))
+	if ((s >= 'A' && s <= 'Z') || (s >= 'a' && s <= 'z'))
 		return (1);
 	else
 		return (0);
@@ -51,15 +51,16 @@ int	is_alpha(char s)
 
 int	is_num(char n)
 {
-	if ((n >= 48) && (n <= 57))
+	if (n >= 48 && n <= 57)
 		return (1);
 	else
 		return (0);
 }
 
+// #include <stdio.h>
 // int main(void)
 // {
-// 	char test[] = "meow, meow+123meow";
+// 	char test[] = "salut, comment tu vas ? 42mots";
 // 	ft_strcapitalize(test);
 // 	printf("%s", test);
 // }

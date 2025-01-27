@@ -5,31 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 02:28:09 by msalangi          #+#    #+#             */
-/*   Updated: 2025/01/23 19:44:30 by msalangi         ###   ########.fr       */
+/*   Created: 2025/01/25 21:55:50 by msalangi          #+#    #+#             */
+/*   Updated: 2025/01/27 18:13:03 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	char	buffer;
-	int		i;
+	unsigned int	i;
 
 	i = 0;
-	while ((src[i] != '\0') && (i <= n))
+	while (src[i] && i < n)
 	{
-		buffer = src[i];
-		dest[i] = buffer;
+		dest[i] = src[i];
 		i++;
 	}
-	return (&dest[i]);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 
+// #include <stdio.h>
 // int main(void)
 // {
-// 	char* src = "hello world";
-// 	char* dest;
-// 	int n = 5;
+// 	char src[] = "meow";
+// 	int n = 10;
+// 	char dest[20];
 // 	ft_strncpy(dest, src, n);
 // 	printf("%s", dest);
 // }
